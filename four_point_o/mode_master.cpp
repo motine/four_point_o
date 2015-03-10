@@ -3,12 +3,10 @@
 #include "modes.h"
 #include "resources.h"
 
-ModeMaster::ModeMaster() : mode_breathe(new MBreathe()) {
-  current_mode = mode_breathe;
-  
-  // resources.matrix.fillScreen(resources.matrix.Color(255,0,0));
-  // resources.matrix.show();
-  // Serial.print(F("Constructor!"));
+ModeMaster::ModeMaster() : 
+  mode_breathe(new MBreathe()) {
+
+  setModeUnlessNull(mode_breathe);
 }
 
 ModeMaster::~ModeMaster() {
@@ -16,7 +14,7 @@ ModeMaster::~ModeMaster() {
 }
 
 void ModeMaster::loop() {
-  current_mode->loop();
+  setModeUnlessNull(current_mode->loop());
 }
 
 void ModeMaster::setModeUnlessNull(Mode* mode) {

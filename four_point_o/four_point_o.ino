@@ -9,13 +9,9 @@
 ModeMaster mode_master = ModeMaster();
 
 void setup() {
-  // Serial
   Serial.begin(9600);
-  
   resources.init();
 }
-
-uint8_t counter = 0;
 
 void loop() {
   mode_master.loop();
