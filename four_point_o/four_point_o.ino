@@ -10,7 +10,7 @@ ModeMaster mode_master = ModeMaster();
 
 void setup() {
   Serial.begin(9600);
-  resources.init();
+  setup_resources();
 }
 
 void loop() {

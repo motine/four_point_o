@@ -8,15 +8,8 @@
 #define LED_PIN 6
 #define MAX_BRIGHTNESS 10
 
-class Resources {
-  public:
-    Resources();
+extern Adafruit_NeoMatrix matrix;
 
-    void init();
-
-    Adafruit_NeoMatrix matrix;
-};
-
-extern Resources resources;
+void setup_resources();
 
 #endif

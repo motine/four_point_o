@@ -14,8 +14,8 @@ Mode* MBreathe::loop() {
   float percent = (pow(EULER, sin(2*PI*t)) - 0.35) / (EULER - 0.35);
   // float percent = sin(PI*t);
   uint8_t component = 255 * percent;
-  resources.matrix.fillScreen(resources.matrix.Color(component, component, component));
-  resources.matrix.show();
+  matrix.fillScreen(matrix.Color(component, component, component));
+  matrix.show();
 
   return NULL;
 }
