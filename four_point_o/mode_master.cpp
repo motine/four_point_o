@@ -1,19 +1,17 @@
 #include <Arduino.h>
 #include "mode_master.h"
-#include "modes.h"
 #include "resources.h"
 
-ModeMaster::ModeMaster() : 
-  mode_breathe(new MBreathe()) {
-
-  setModeUnlessNull(mode_breathe);
+ModeMaster::ModeMaster(Mode* initial_mode) : initial_mode(initial_mode) {
 }
 
 ModeMaster::~ModeMaster() {
-  delete mode_breathe;
 }
 
 void ModeMaster::loop() {
+  if (current_mode == NULL) {
+      setModeUnlessNull(initial_mode);
+  }
   setModeUnlessNull(current_mode->loop());
 }
 

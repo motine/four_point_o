@@ -4,13 +4,13 @@
 
 class ModeMaster {
    public:
-     ModeMaster();
+     ModeMaster(Mode* initial_mode);
      ~ModeMaster();
      void setModeUnlessNull(Mode* mode);
      void loop();
 
+     Mode* initial_mode;
      Mode* current_mode;
-     Mode* mode_breathe;
 };
 
 #endif

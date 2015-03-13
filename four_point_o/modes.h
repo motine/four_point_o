@@ -18,9 +18,17 @@ class Mode {
 class MBreathe : public Mode {
   public:
     MBreathe() : Mode() { };
-
     virtual Mode* loop();
 };
+extern MBreathe m_breathe;
+
+
+class MFlow : public Mode {
+  public:
+    MFlow() : Mode() { };
+    virtual Mode* loop();
+};
+extern MFlow m_flow;
 
 
 #endif
