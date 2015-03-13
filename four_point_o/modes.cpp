@@ -18,8 +18,6 @@ void fill_all(uint32_t color) {
   strip.show();
 }
 
-
-
 void MOff::enter() {
   fill_all(strip.Color(0, 0, 0));
   strip.show();
