@@ -10,9 +10,16 @@ If you want to change the initial mode when the program starts, please see `reso
 
 If you want to change the color of the simple modes, please see `modes.cpp` and find the line `extern MColor m_color_a = MColor(strip.Color(255,0,0));`.
 
-## Libraries used
 
-- Adafruit NeoPixel ([GitHub](https://github.com/adafruit/Adafruit_NeoPixel) & see Uberguide above)
+## Formula
+
+I created some tests for the animations. You will need Mac OSX's [Grapher](http://en.wikipedia.org/wiki/Grapher) (should be among your Applications/Utilities).
+
+## Libraries
+
+You will need to install the following Library in your Arduino, please see the [Uberguide](https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library) for instructions:
+
+- Adafruit NeoPixel ([GitHub](https://github.com/adafruit/Adafruit_NeoPixel))
 
 ## Credits
 
@@ -20,3 +27,4 @@ I used to following software:
 
 * TextMate for text editing
 * Arduino GUI for compiling and uploading (with the external editor setting enabled)
+* Mac's [Grapher](http://en.wikipedia.org/wiki/Grapher)

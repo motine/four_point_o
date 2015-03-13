@@ -1,9 +1,8 @@
 #include "resources.h"
 
 void button_press(uint8_t pin) {
-  Serial.println(F("HUhuhu"));
   switch (pin) {
-    case BUTTON_OFF_PIN: 
+    case BUTTON_OFF_PIN:
       mode_master.setModeUnlessNull(&m_off);
       break;
     case BUTTON_BREATHE_PIN:
@@ -23,11 +22,11 @@ void button_press(uint8_t pin) {
 
 ModeMaster mode_master = ModeMaster(&m_color_a);
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
-Button button_off =     Button(BUTTON_OFF_PIN, button_press, NULL, button_press, NULL);
-Button button_breathe = Button(BUTTON_BREATHE_PIN, button_press, NULL, button_press, NULL);
-Button button_color_a = Button(BUTTON_COLOR_A_PIN, button_press, NULL, button_press, NULL);
-Button button_color_b = Button(BUTTON_COLOR_B_PIN, button_press, NULL, button_press, NULL);
-Button button_flow =    Button(BUTTON_FLOW_PIN, button_press, NULL, button_press, NULL);
+Button button_off =     Button(BUTTON_OFF_PIN, button_press);
+Button button_breathe = Button(BUTTON_BREATHE_PIN, button_press);
+Button button_color_a = Button(BUTTON_COLOR_A_PIN, button_press);
+Button button_color_b = Button(BUTTON_COLOR_B_PIN, button_press);
+Button button_flow =    Button(BUTTON_FLOW_PIN, button_press);
 
 void setup_resources() {
   Serial.begin(9600);
