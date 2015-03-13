@@ -33,7 +33,7 @@ void setup_resources() {
   Serial.begin(9600);
   // LEDs
   strip.begin();
-  strip.setBrightness(MAX_BRIGHTNESS);
+  strip.setBrightness(BRIGHTNESS);
   strip.show();
 
   button_off.setup();

@@ -1,19 +1,18 @@
 #ifndef RESOURCES_H
 #define RESOURCES_H
 
-#include <Adafruit_GFX.h>
 #include <Adafruit_NeoPixel.h>
 #include "button.h"
 #include "mode_master.h"
 
 #define LED_PIN 6
-#define LED_COUNT 13
-#define MAX_BRIGHTNESS 10
+#define LED_COUNT 13 // number of LEDs
+#define BRIGHTNESS 10 // max is 255 (but do not power via the Arduino PINs only)
 
 #define EULER 2.7182818284
 #define PI 3.14159265359
 
-#define BREATHE_DURATION 4000
+#define BREATHE_DURATION 4000 // ms
 #define FLOW_SPEED_DIVISOR 20 // higher value means slower
 
 #define BUTTON_OFF_PIN 8

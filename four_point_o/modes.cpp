@@ -61,8 +61,7 @@ Mode* MFlow::loop() {
   return NULL;
 }
 
-Mode* MColor::loop() {
+void MColor::enter() {
   fill_all(color);
   strip.show();
-  return NULL;
 }

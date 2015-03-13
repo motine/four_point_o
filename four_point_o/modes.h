@@ -1,13 +1,6 @@
 #ifndef MODES_H
 #define MODES_H
 
-// Modes:
-// - Breathe
-// - Color A
-// - Color B
-// - Flow
-// - Off
-
 class Mode {
   public:
     Mode();
@@ -45,7 +38,7 @@ extern MFlow m_flow;
 class MColor : public Mode {
   public:
     MColor(uint32_t color) : Mode(), color(color) { };
-    virtual Mode* loop();
+    void enter();
     uint32_t color;
 };
 extern MColor m_color_a;

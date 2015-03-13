@@ -1,4 +1,3 @@
-#include <Adafruit_GFX.h>
 #include <Adafruit_NeoPixel.h>
 
 #include "modes.h"
