@@ -1,14 +1,41 @@
 #include "resources.h"
 
-ModeMaster mode_master = ModeMaster(&m_breathe);
-Adafruit_NeoMatrix matrix = Adafruit_NeoMatrix(8, 8, LED_PIN, NEO_MATRIX_TOP + NEO_MATRIX_LEFT + NEO_MATRIX_ROWS + NEO_MATRIX_PROGRESSIVE, NEO_GRB + NEO_KHZ800);
+void button_press(uint8_t pin) {
+  switch (pin) {
+    case BUTTON_OFF_PIN: 
+      mode_master.setModeUnlessNull(&m_off);
+      break;
+    case BUTTON_BREATHE_PIN:
+      mode_master.setModeUnlessNull(&m_breathe);
+      break;
+    
+    case BUTTON_COLOR_A_PIN:
+      mode_master.setModeUnlessNull(&m_color_a);
+      break;
+    case BUTTON_COLOR_B_PIN:
+      mode_master.setModeUnlessNull(&m_color_b);
+      break;
+    case BUTTON_FLOW_PIN:
+      mode_master.setModeUnlessNull(&m_flow);
+      break;
+  }
+}
+
+ModeMaster mode_master = ModeMaster(&m_off);
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
+Button button_breathe = Button(BUTTON_BREATHE_PIN, button_press, NULL, button_press, NULL);
 
 void setup_resources() {
   Serial.begin(9600);
   // LEDs
-  matrix.begin();
-  matrix.setTextWrap(false);
-  matrix.setBrightness(MAX_BRIGHTNESS);
-  matrix.fillScreen(matrix.Color(0,0,0));
-  matrix.show();
+  strip.begin();
+  strip.setBrightness(MAX_BRIGHTNESS);
+  strip.show();
+
+  button_breathe.setup();
 };
+
+void loop_resources() {
+  mode_master.loop();
+  button_breathe.loop();
+}

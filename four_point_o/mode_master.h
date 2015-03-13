@@ -2,6 +2,7 @@
 #define MODE_MASTER_H
 #include "modes.h"
 
+
 class ModeMaster {
    public:
      ModeMaster(Mode* initial_mode);

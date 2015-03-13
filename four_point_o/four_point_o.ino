@@ -1,5 +1,4 @@
 #include <Adafruit_GFX.h>
-#include <Adafruit_NeoMatrix.h>
 #include <Adafruit_NeoPixel.h>
 
 #include "modes.h"
@@ -11,5 +10,5 @@ void setup() {
 }
 
 void loop() {
-  mode_master.loop();
+  loop_resources();
 }
